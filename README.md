@@ -43,7 +43,3 @@
   <ul>
     <li>Weather data: <a href="https://www.weatherapi.com/">Weather API</a></li>
   </ul>
-
-  <h2>License</h2>
-  <p>The WeatherAppLHM application is open source and available under the <a href="https://github.com/luizeth0/WeatherAppLHM/blob/main/LICENSE">MIT License</a>. Feel free to modify and distribute the application as per the license terms.</p>
-
