@@ -12,11 +12,9 @@
   <h2>Features</h2>
   <ul>
     <li>Current weather information</li>
-    <li>Temperature in Celsius and Fahrenheit</li>
-    <li>Humidity and wind speed</li>
+    <li>Temperature in Fahrenheit</li>
     <li>Weather condition description</li>
     <li>Sunrise and sunset times</li>
-    <li>5-day forecast</li>
     <li>Search functionality to get weather information for any location</li>
   </ul>
 
