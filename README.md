@@ -3,7 +3,8 @@
 
   <h2>Screenshots</h2>
   <p>Here are some screenshots of the WeatherAppLHM application:</p>
-  <img src="https://github.com/luizeth0/WeatherAppLHM/assets/123969601/a3cf9606-8d3a-4bd6-a0f0-0e7c6037ee98" alt="Screenshot 1" width="300px" heigh="700">
+  <img src="https://github.com/luizeth0/WeatherAppLHM/assets/123969601/fe0d325e-5223-408d-a83a-f957ae97fae68" alt="Screenshot 1" width="300px" heigh="700">
+  <img src="https://github.com/luizeth0/WeatherAppLHM/assets/123969601/7874f5ce-ab45-470a-85f6-4cda8ece3bb7" alt="Screenshot 1" width="300px" heigh="700">
   <img src="https://github.com/luizeth0/WeatherAppLHM/assets/123969601/735726e8-2e30-4086-849e-6d17ce1a721c" alt="Screenshot 2" width="300px" heigh="700">
 
   <h2>Description</h2>
