@@ -52,7 +52,7 @@ fun HomeScreen(navController: NavController, vm: WeatherViewModel) {
             navController.navigate(route = Routes.WeatherDetails.route)
         }
 
-        
+
 
         ButtonDefault(
             title = "Weather in my location", modifier = Modifier
