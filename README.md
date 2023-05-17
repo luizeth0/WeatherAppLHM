@@ -3,8 +3,8 @@
 
   <h2>Screenshots</h2>
   <p>Here are some screenshots of the WeatherAppLHM application:</p>
-  <img src="https://github.com/luizeth0/WeatherAppLHM/assets/123969601/a3cf9606-8d3a-4bd6-a0f0-0e7c6037ee98" alt="Screenshot 1">
-  <img src="https://github.com/luizeth0/WeatherAppLHM/assets/123969601/735726e8-2e30-4086-849e-6d17ce1a721c" alt="Screenshot 2">
+  <img src="https://github.com/luizeth0/WeatherAppLHM/assets/123969601/a3cf9606-8d3a-4bd6-a0f0-0e7c6037ee98" alt="Screenshot 1" width="400px" heigh="800">
+  <img src="https://github.com/luizeth0/WeatherAppLHM/assets/123969601/735726e8-2e30-4086-849e-6d17ce1a721c" alt="Screenshot 2" width="400px" heigh="800">
 
   <h2>Description</h2>
   <p>The WeatherAppLHM is a weather application that provides users with current weather information for their location. It retrieves weather data from a reliable weather API and presents it in a user-friendly interface.</p>
