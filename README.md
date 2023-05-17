@@ -41,5 +41,5 @@
 
   <h2>Credits</h2>
   <ul>
-    <li>Weather data: <a href="https://www.weatherapi.com/">Weather API</a></li>
+    <li>Weather data: <a href="https://openweathermap.org">Weather API</a></li>
   </ul>
