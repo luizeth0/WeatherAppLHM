@@ -23,14 +23,8 @@
     <li>Clone this repository to your local machine.
       <pre><code>git clone https://github.com/luizeth0/WeatherAppLHM.git</code></pre>
     </li>
-    <li>Open the project in your preferred code editor.</li>
-    <li>Install the project dependencies using a package manager such as npm or yarn.
-      <pre><code>npm install</code></pre>
-    </li>
-    <li>Start the application.
-      <pre><code>npm start</code></pre>
-    </li>
-    <li>Access the WeatherAppLHM application in your web browser at <code>http://localhost:3000</code>.</li>
+    <li>Open the project.</li>
+    <li>Start the application.</li>
   </ol>
 
   <h2>Technologies Used</h2>
