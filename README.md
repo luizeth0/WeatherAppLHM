@@ -33,6 +33,7 @@
     <li>Coroutines</li>
     <li>Compose</li>
     <li>Hilt</li>
+    <li>Coil</li>
   </ul>
 
   <h2>Credits</h2>
