@@ -46,7 +46,6 @@
   <h2>Credits</h2>
   <ul>
     <li>Weather data: <a href="https://www.weatherapi.com/">Weather API</a></li>
-    <li>Icons: <a href="https://fontawesome.com/">Font Awesome</a></li>
   </ul>
 
   <h2>License</h2>
