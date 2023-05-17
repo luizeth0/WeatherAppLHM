@@ -1,11 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>WeatherAppLHM - README</title>
-</head>
-<body>
+
   <h1>WeatherAppLHM</h1>
 
   <h2>Screenshots</h2>
@@ -58,6 +51,4 @@
 
   <h2>License</h2>
   <p>The WeatherAppLHM application is open source and available under the <a href="https://github.com/luizeth0/WeatherAppLHM/blob/main/LICENSE">MIT License</a>. Feel free to modify and distribute the application as per the license terms.</p>
-</body>
-</html>
 
