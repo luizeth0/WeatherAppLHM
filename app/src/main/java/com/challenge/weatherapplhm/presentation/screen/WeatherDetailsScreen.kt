@@ -1,6 +1,8 @@
 package com.challenge.weatherapplhm.presentation.screen
 
+import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
+import androidx.compose.material3.*
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.collectAsState
 import androidx.compose.ui.Alignment
@@ -36,6 +38,7 @@ fun DetailsScreen(vm: WeatherViewModel) {
 }
 
 
+@OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun DetailsList(data: DomainWeather) {
 
@@ -50,68 +53,77 @@ fun DetailsList(data: DomainWeather) {
         color = Color.Blue
     }
 
-
-    Column(
-        modifier = Modifier.fillMaxSize(),
-        horizontalAlignment = Alignment.CenterHorizontally
-    ) {
-
-
-        TextDefault(
-            modifier = Modifier.padding(8.dp),
-            title = data.name ?: "Name not available",
-            textSize = 32,
-            fontStyle = FontWeight.ExtraBold,
-            textColor = Color.Black
-        )
-
-
-
-        TextDefault(
-            modifier = Modifier.padding(8.dp),
-            title = "${grade.toString().substringBefore(".")}º",
-            textSize = 50,
-            fontStyle = FontWeight.ExtraBold,
-            textColor = color
-        )
-
-        Row {
-
-
-            TextDefault(
-                modifier = Modifier.padding(8.dp),
-                title = data.weather?.first()?.main ?: "",
-                textSize = 22,
-                fontStyle = FontWeight.ExtraBold,
-                textColor = Color.Black
+    Scaffold(
+        topBar = {
+            TopAppBar(
+                title = { Text("WEATHER", fontWeight = FontWeight.Bold) },
+                colors = TopAppBarDefaults.centerAlignedTopAppBarColors()
             )
+        },
+        content = { padding ->
 
-            TextDefault(
-                modifier = Modifier.padding(8.dp),
-                title = "- ${data.weather?.first()?.description}",
-                textSize = 22,
-                fontStyle = FontWeight.ExtraBold,
-                textColor = Color.Black
-            )
 
+            Column(
+                modifier = Modifier.fillMaxSize().padding(padding).background(MaterialTheme.colorScheme.background),
+                horizontalAlignment = Alignment.CenterHorizontally
+            ) {
+
+
+                TextDefault(
+                    modifier = Modifier.padding(8.dp),
+                    title = data.name ?: "Name not available",
+                    textSize = 32,
+                    fontStyle = FontWeight.ExtraBold,
+                    textColor = Color.Black
+                )
+
+
+
+                TextDefault(
+                    modifier = Modifier.padding(8.dp),
+                    title = "${grade.toString().substringBefore(".")}º",
+                    textSize = 50,
+                    fontStyle = FontWeight.ExtraBold,
+                    textColor = color
+                )
+
+                Row {
+
+
+                    TextDefault(
+                        modifier = Modifier.padding(8.dp),
+                        title = data.weather?.first()?.main ?: "",
+                        textSize = 22,
+                        fontStyle = FontWeight.ExtraBold,
+                        textColor = Color.Black
+                    )
+
+                    TextDefault(
+                        modifier = Modifier.padding(8.dp),
+                        title = "- ${data.weather?.first()?.description}",
+                        textSize = 22,
+                        fontStyle = FontWeight.ExtraBold,
+                        textColor = Color.Black
+                    )
+
+
+                }
+
+                AsyncImage(
+                    model = ImageRequest.Builder(context)
+                        .data("${baseImage}${data.weather?.first()?.icon}@4x.png")
+                        .crossfade(true)
+                        .build(),
+                    placeholder = painterResource(R.drawable.ic_launcher_foreground),
+                    error = painterResource(id = R.drawable.ic_launcher_background),
+                    contentDescription = "ImageIcon",
+                    contentScale = ContentScale.Crop, modifier = Modifier.size(150.dp)
+                )
+
+            }
 
         }
-
-        AsyncImage(
-            model = ImageRequest.Builder(context)
-                .data("${baseImage}${data.weather?.first()?.icon}@4x.png")
-                .crossfade(true)
-                .build(),
-            placeholder = painterResource(R.drawable.ic_launcher_foreground),
-            error = painterResource(id = R.drawable.ic_launcher_background),
-            contentDescription = "ImageIcon",
-            contentScale = ContentScale.Crop, modifier = Modifier.size(150.dp)
-        )
-
-    }
-
-
-
+    )
 
 
 }
