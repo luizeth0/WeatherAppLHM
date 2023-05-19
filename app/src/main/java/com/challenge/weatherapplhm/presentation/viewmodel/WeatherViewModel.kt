@@ -2,6 +2,8 @@ package com.challenge.weatherapplhm.presentation.viewmodel
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import com.challenge.weatherapplhm.data.database.LocalRepository
+import com.challenge.weatherapplhm.data.database.WeatherTable
 import com.challenge.weatherapplhm.domain.CityUseCases
 import com.challenge.weatherapplhm.domain.DomainWeather
 import com.challenge.weatherapplhm.domain.LocationUseCases
@@ -12,12 +14,14 @@ import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.asStateFlow
 import kotlinx.coroutines.launch
+import org.checkerframework.checker.guieffect.qual.UI
 import javax.inject.Inject
 
 @HiltViewModel
 class WeatherViewModel @Inject constructor(
     private val cityUseCases: CityUseCases,
-    private val locationUseCases: LocationUseCases
+    private val locationUseCases: LocationUseCases,
+    private val localRepository: LocalRepository
 ) : ViewModel() {
 
     private val _weather: MutableStateFlow<UIState<DomainWeather>> =
@@ -26,6 +30,10 @@ class WeatherViewModel @Inject constructor(
 
     private val _city: MutableStateFlow<String> = MutableStateFlow("")
     val city: StateFlow<String> get() = _city.asStateFlow()
+
+    private val _weatherStored: MutableStateFlow<UIState<WeatherTable>> =
+        MutableStateFlow(UIState.LOADING)
+    val weatherStored: StateFlow<UIState<WeatherTable>> get() = _weatherStored.asStateFlow()
 
 
 
@@ -46,6 +54,20 @@ class WeatherViewModel @Inject constructor(
             _weather.value = it
         }
 
+    }
+
+    fun getWeatherStored() {
+        viewModelScope.launch {
+            _weatherStored.value = localRepository.getWeather()
+        }
+    }
+
+    fun saveWeather(weather: DomainWeather? = null) {
+        weather?.let {
+            viewModelScope.launch {
+                localRepository.insertWeather(weather)
+            }
+        }
     }
 
 

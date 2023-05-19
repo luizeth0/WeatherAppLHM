@@ -8,7 +8,9 @@ import kotlinx.coroutines.flow.collect
 import kotlinx.coroutines.flow.flow
 import javax.inject.Inject
 
-class LocationUseCases @Inject constructor(private val weatherRepository: WeatherRepository) {
+class LocationUseCases @Inject constructor(
+    private val weatherRepository: WeatherRepository
+    ) {
 
 
     operator fun invoke(lat: Double, lon: Double): Flow<UIState<DomainWeather>> = flow {

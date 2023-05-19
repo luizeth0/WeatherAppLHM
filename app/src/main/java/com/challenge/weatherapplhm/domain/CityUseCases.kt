@@ -7,7 +7,9 @@ import kotlinx.coroutines.flow.collect
 import kotlinx.coroutines.flow.flow
 import javax.inject.Inject
 
-class CityUseCases @Inject constructor(private val weatherRepository: WeatherRepository) {
+class CityUseCases @Inject constructor(
+    private val weatherRepository: WeatherRepository
+    ) {
 
 
     operator fun invoke(city: String): Flow<UIState<DomainWeather>> = flow {

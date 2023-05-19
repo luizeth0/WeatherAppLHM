@@ -38,17 +38,18 @@ fun HomeScreen(navController: NavController, vm: WeatherViewModel) {
     Scaffold(
         topBar = {
             TopAppBar(
-                title = {Text("WEATHER", fontWeight = FontWeight.Bold)},
+                title = { Text("WEATHER", fontWeight = FontWeight.Bold) },
                 colors = TopAppBarDefaults.centerAlignedTopAppBarColors()
             )
         },
-        content = {padding ->
+        content = { padding ->
 
 
-
-            Column(modifier = Modifier
-                .fillMaxSize()
-                .padding(padding), horizontalAlignment = Alignment.CenterHorizontally) {
+            Column(
+                modifier = Modifier
+                    .fillMaxSize()
+                    .padding(padding), horizontalAlignment = Alignment.CenterHorizontally
+            ) {
 
                 SearchDefault(vm = vm)
 
@@ -59,6 +60,7 @@ fun HomeScreen(navController: NavController, vm: WeatherViewModel) {
                         .padding(8.dp)
                         .fillMaxWidth()
                 ) {
+                   //saveCity("test", city.value, context)
                     vm.getWeatherCity(city.value)
                     navController.navigate(route = Routes.WeatherDetails.route)
                 }
@@ -94,7 +96,7 @@ fun HomeScreen(navController: NavController, vm: WeatherViewModel) {
 
         }
     )
-    
+
 
 
     LaunchedEffect(context) {
@@ -108,8 +110,8 @@ fun HomeScreen(navController: NavController, vm: WeatherViewModel) {
 }
 
 
-
 private const val PERMISSION_REQUEST_CODE = 123
+
 @SuppressLint("MissingPermission")
 
 private fun getLocation(context: Context, callback: (Location) -> Unit) {
@@ -142,4 +144,25 @@ private fun getLocation(context: Context, callback: (Location) -> Unit) {
             Looper.getMainLooper()
         )
     }
+}
+
+
+fun saveCity(key: String, city: String, context: Context) {
+
+
+    val shared = context.getSharedPreferences(key, Context.MODE_PRIVATE) ?: return
+    with(shared.edit()){
+        putString(key, city)
+
+    }
+
+
+    val aaa: String? = null
+
+    val bbb = shared.getString("test", aaa)
+
+    Log.d("TAG", "saveCity: ${bbb}")
+
+
+
 }
