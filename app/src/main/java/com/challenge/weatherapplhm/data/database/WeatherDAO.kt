@@ -6,7 +6,6 @@ import androidx.room.*
 interface WeatherDAO {
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
-    //"INSERT INTO weather WHERE id=0"
     suspend fun insertWeather(vararg weather: WeatherTable)
 
     @Delete
