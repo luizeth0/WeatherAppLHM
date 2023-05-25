@@ -19,6 +19,7 @@ import androidx.compose.ui.unit.dp
 import androidx.core.app.ActivityCompat
 import androidx.navigation.NavController
 import com.challenge.weatherapplhm.presentation.components.ButtonDefault
+import com.challenge.weatherapplhm.presentation.components.CustomTopAppBar
 import com.challenge.weatherapplhm.presentation.components.SearchDefault
 import com.challenge.weatherapplhm.presentation.navigation.Routes
 import com.challenge.weatherapplhm.presentation.viewmodel.WeatherViewModel
@@ -37,9 +38,8 @@ fun HomeScreen(navController: NavController, vm: WeatherViewModel) {
 
     Scaffold(
         topBar = {
-            TopAppBar(
-                title = { Text("WEATHER", fontWeight = FontWeight.Bold) },
-                colors = TopAppBarDefaults.centerAlignedTopAppBarColors()
+            CustomTopAppBar(
+                navController, "WEATHER", true
             )
         },
         content = { padding ->

@@ -1,4 +1,4 @@
-package com.challenge.weatherapplhm.presentation
+package com.challenge.weatherapplhm.presentation.components
 
 import androidx.compose.material.*
 import androidx.compose.material.icons.Icons

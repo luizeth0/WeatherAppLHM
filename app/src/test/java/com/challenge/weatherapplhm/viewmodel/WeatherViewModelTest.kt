@@ -2,6 +2,7 @@ package com.challenge.weatherapplhm.viewmodel
 
 
 import androidx.arch.core.executor.testing.InstantTaskExecutorRule
+import com.challenge.weatherapplhm.data.database.LocalRepository
 import com.challenge.weatherapplhm.domain.CityUseCases
 import com.challenge.weatherapplhm.domain.DomainWeather
 import com.challenge.weatherapplhm.domain.LocationUseCases
@@ -34,11 +35,12 @@ class WeatherViewModelTest {
     private lateinit var viewModel: WeatherViewModel
     private var cityUseCases: CityUseCases = mockk(relaxed = true)
     private var locationUseCases: LocationUseCases = mockk(relaxed = true)
+    private var localRepository: LocalRepository = mockk(relaxed = true)
 
     @Before
     fun setup() {
         cityUseCases = mockk()
-        viewModel = WeatherViewModel(cityUseCases, locationUseCases)
+        viewModel = WeatherViewModel(cityUseCases, locationUseCases, localRepository)
         Dispatchers.setMain(testDispatcher)
     }
 

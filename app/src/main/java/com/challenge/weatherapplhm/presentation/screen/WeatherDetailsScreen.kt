@@ -45,6 +45,8 @@ fun DetailsList(data: DomainWeather) {
     val context = LocalContext.current
     val baseImage = "http://openweathermap.org/img/wn/"
 
+
+
     val grade = kelvinToFahrenheit(data.main?.temp ?: 0.0)
     var color = Color.Black
     if (grade >= 77) {
