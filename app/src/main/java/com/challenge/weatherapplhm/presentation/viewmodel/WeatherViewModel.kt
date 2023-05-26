@@ -2,26 +2,24 @@ package com.challenge.weatherapplhm.presentation.viewmodel
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.challenge.weatherapplhm.data.database.LocalRepository
 import com.challenge.weatherapplhm.data.database.WeatherTable
+import com.challenge.weatherapplhm.data.rest.WeatherRepository
 import com.challenge.weatherapplhm.domain.CityUseCases
 import com.challenge.weatherapplhm.domain.DomainWeather
 import com.challenge.weatherapplhm.domain.LocationUseCases
 import com.challenge.weatherapplhm.utils.UIState
-import com.google.android.gms.maps.model.LatLng
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.asStateFlow
 import kotlinx.coroutines.launch
-import org.checkerframework.checker.guieffect.qual.UI
 import javax.inject.Inject
 
 @HiltViewModel
 class WeatherViewModel @Inject constructor(
     private val cityUseCases: CityUseCases,
     private val locationUseCases: LocationUseCases,
-    private val localRepository: LocalRepository
+    private val localRepository: WeatherRepository
 ) : ViewModel() {
 
     private val _weather: MutableStateFlow<UIState<DomainWeather>> =
